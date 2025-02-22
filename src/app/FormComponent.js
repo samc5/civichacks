@@ -38,7 +38,6 @@ export default function FormComponent() {
       if (data.results.length > 0) {
         // Address is valid, proceed with submission
         formData.latitude, formData.longitude = data.results[0].geometry.location;
-        alert(data.results[0])
         alert(`Submitted: ${JSON.stringify(formData)}`);
       } else {
         // Address is invalid
