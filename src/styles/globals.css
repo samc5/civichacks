@@ -1,0 +1,51 @@
+/* styles/globals.css */
+
+/* Normalize or reset default browser styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set body font, background, and text color */
+body {
+  font-family: 'Arial', sans-serif; /* You can change this to a custom font */
+  background-color: #f4f4f4; /* Light gray background */
+  color: #333; /* Dark text color for better readability */
+  line-height: 1.6; /* Improve line spacing */
+}
+
+/* Ensure links have no underlines and use a default color */
+a {
+  text-decoration: none;
+  color: inherit; /* This makes links inherit the text color */
+}
+
+/* Set a default container size for center alignment */
+.container {
+  max-width: 1200px;
+  margin: 0 auto; /* Center horizontally */
+  padding: 0 20px; /* Padding on the sides */
+}
+
+/* Global heading styles */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700; /* Bold headings */
+  line-height: 1.25;
+}
+
+/* You can also define any other global styles, like for buttons, forms, etc. */
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
