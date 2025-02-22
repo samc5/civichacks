@@ -2,8 +2,9 @@ import Image from "next/image";
 import Taskbar from "../components/Taskbar";
 import "../styles/globals.css";
 
-export default function Home() {
+import FormComponent from "./FormComponent";
 
+export default function Home() {
   //list of news stories to be displayed on right side
   const newsStories = [
     {
@@ -64,6 +65,4 @@ export default function Home() {
           </ul>
         </aside>
       </div>
-    </div>
-  );
-}
+</div>)}
