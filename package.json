@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@arcgis/core": "^4.32.0",
     "axios": "^1.7.9",
     "dotenv": "^16.4.7",
+    "esri-loader": "^3.7.0",
     "mongodb": "^6.13.1",
     "next": "^15.1.7",
     "react": "^19.0.0",

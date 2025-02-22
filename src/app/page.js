@@ -1,4 +1,4 @@
-import Image from "next/image";
+import dynamic from "next/dynamic";
 import Taskbar from "../components/Taskbar";
 import "../styles/globals.css";
 
@@ -34,6 +34,7 @@ export default function Home() {
     <div className="flex flex-col h-screen"> 
       <Taskbar/>
 
+      {/* Main Content: Map + News Stories */}
       <div className="flex flex-grow">
         {/* Map Section */}
         <div className="map-container flex-1">
@@ -49,10 +50,8 @@ export default function Home() {
 
         {/* News Stories Section */}
         <aside className="news-section w-1/3 bg-gray-200 p-4 flex flex-col h-full">
-          {/* Center and enlarge the "Events" header */}
           <h2 className="news-header text-3xl font-bold text-center mb-4">Events</h2>
           <ul className="news-list space-y-4 flex-grow">
-            {/* Map through the newsStories array to generate list items */}
             {newsStories.map((story, index) => (
               <li key={index}>
                 <h3 className="news-title font-semibold">{story.title}</h3>
