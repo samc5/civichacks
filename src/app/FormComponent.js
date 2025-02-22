@@ -12,15 +12,41 @@ export default function FormComponent() {
     address: "",
     immigrationStatus: "",
     monitored: "",
+    latitude: "",
+    longitude: ""
   });
+  const axios = require('axios');
+
+  const [errorMessage, setErrorMessage] = useState(""); // State for error messages
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert(`Submitted: ${JSON.stringify(formData)}`);
+    setErrorMessage(""); // Clear any previous error messages
+
+    // Validate the address
+    const apiUrl = "https://civichacks.vercel.app/api/geocode";
+    try {
+      const response = await axios.get(apiUrl, {
+        params: { address: formData.address },
+      });
+      const data = response.data;
+
+      if (data.results.length > 0) {
+        // Address is valid, proceed with submission
+        formData.latitude, formData.longitude = data.results[0].geometry.location;
+        alert(`Submitted: ${JSON.stringify(formData)}`);
+      } else {
+        // Address is invalid
+        alert("The address entered is not valid. Please check and try again.");
+      }
+    } catch (error) {
+      console.error("Error validating address:", error);
+      alert("An error occurred while validating the address. Please try again later.");
+    }
   };
 
   return (
