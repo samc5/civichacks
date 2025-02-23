@@ -43,7 +43,7 @@ export default function StatisticsPage() {
             <div className={styles.gridItemNumber}>{stats.pastWeekEvents}</div>
           </div>
           <div className={styles.gridItem}>
-            <h2 className={styles.gridItemTitle}>Recent Commmon Location:</h2>
+            <h2 className={styles.gridItemTitle}>Recent Common Location:</h2>
             <div className={styles.gridItemNumber}>CDS</div>
           </div>
           <div className={styles.gridItem}>
