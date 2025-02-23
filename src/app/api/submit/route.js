@@ -5,8 +5,11 @@ export async function POST(req) {
   try {
     const { MONGODB_URI } = process.env;
     const client = new MongoClient(MONGODB_URI);
-    console.log("MONGODB_URI:", process.env.MONGODB_URI ? "Loaded" : "Missing");
     await client.connect();
+
+    await client.db("admin").command({ping: 1});
+    console.log("hji");
+
     const db = client.db("ICE");
     const collection = db.collection("Events");
 
