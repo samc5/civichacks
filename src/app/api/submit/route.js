@@ -19,7 +19,7 @@ export async function POST(req) {
 
     const updateResult = await collection.updateOne(
       { _id: new ObjectId('67ba4b28876839722173788b')}, // Update operation
-      { $addToSet: { ice_arrests: formData }} // If no document matches, insert a new one
+      { $push: { ice_arrests: formData }} // If no document matches, insert a new one
     );
     
     client.close();
