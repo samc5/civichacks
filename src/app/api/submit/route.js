@@ -4,7 +4,7 @@ import { MongoClient } from "mongodb";
 export async function POST(req) {
   try {
     //console.log("MONGODB_URI:", process.env.MONGODB_URI ? "Loaded" : "Missing");
-    const { MONGODB_URI } = process.env.MONGO_URI;
+    const MONGODB_URI = process.env.MONGO_URI;
     const client = new MongoClient(MONGODB_URI);
     await client.connect();
 
