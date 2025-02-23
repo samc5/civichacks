@@ -14,54 +14,24 @@ const ArcGISMap = dynamic(() => import("../components/ArcGISMap"), { ssr: false 
 const newsStories = [
   {
     title: "Story 1775",
-    date: "March 17, Croton-On-Hudson, NY 10520",
-    description: "It was around the...",
+    date: "February 23, 2025",
+    description: "Donald Trump has reassigned the acting director of ICE due to his discontent with the pace of deportations, and has signed multiple executive orders to accelerate deportations.",
   },
   {
     title: "Story 1774",
-    date: "February 11, Inwood, NY 11096",
-    description: "At 6:30am around...",
+    date: "February 21, 2025",
+    description: "The Trump administration has deported 37,660 people in his first month, significantly below the monthly average of 57,000 during the last year of Joe Biden's administration",
   },
   {
     title: "Story 1772",
-    date: "November 10, Port Washington, NY",
-    description: "Around 6am...",
+    date: "February 18, 2025",
+    description: "The Department of Homeland Security has announced plans to increase deportations, including agreements with several countries, and has reassigned the acting ICE director to oversee all field and enforcement operations.",
   },
   {
     title: "Story 1771",
-    date: "April 27, Arcadia, CA",
-    description: "Around 7pm...",
-  },
-  {
-    title: "Story 1771",
-    date: "April 27, Arcadia, CA",
-    description: "Around 7pm...",
-  },
-  {
-    title: "Story 1771",
-    date: "April 27, Arcadia, CA",
-    description: "Around 7pm...",
-  },
-  {
-    title: "Story 1771",
-    date: "April 27, Arcadia, CA",
-    description: "Around 7pm...",
-  },
-  {
-    title: "Story 1771",
-    date: "April 27, Arcadia, CA",
-    description: "Around 7pm...",
-  },
-  {
-    title: "Story 1771",
-    date: "April 27, Arcadia, CA",
-    description: "Around 7pm...",
-  },
-  {
-    title: "Story 1771",
-    date: "April 27, Arcadia, CA",
-    description: "Around 7pm...",
-  },
+    date: "February 15, 2025",
+    description: "The US has flown nearly 200 undocumented immigrants back to Venezuela from Guantánamo Bay, Cuba, as part of a plan to process and deport immigrants more efficiently",
+  }
 ];
 
 export default function Home() {
