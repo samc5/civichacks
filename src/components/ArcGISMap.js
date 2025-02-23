@@ -59,6 +59,8 @@ const ArcGISMap = () => {
 
             // Add points to map as graphics
             points.forEach((point) => {
+                const isVerified = point.verified ?? false;
+                
                 const graphic = new Graphic({
                     geometry: {
                         type: "point",
@@ -67,8 +69,8 @@ const ArcGISMap = () => {
                     },
                     symbol: {
                         type: "simple-marker",
-                        style: "triangle",
-                        color: "yellow",
+                        style: isVerified ? "circle" : "triangle",
+                        color: isVerified ? "red" : "yellow", // Use green color if verified, otherwise yellow
                         size: "10px",
                         outline: {
                             color: "black",
