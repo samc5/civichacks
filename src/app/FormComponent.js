@@ -49,8 +49,8 @@ export default function FormComponent() {
         alert(`Submitted: ${JSON.stringify(formData)}`);
 
         // Send data to MongoDB via API route
-        //const submitResponse = await axios.post("/api/submit", formData);
-        //alert("Form submitted successfully!");
+        const submitResponse = await axios.post("/api/submit", formData);
+        alert("Form submitted successfully!");
       }
       else {
         // Address is invalid
