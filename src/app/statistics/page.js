@@ -47,8 +47,8 @@ export default function StatisticsPage() {
             <div className={styles.gridItemNumber}>Location A</div>
           </div>
           <div className={styles.gridItem}>
-            <h2 className={styles.gridItemTitle}>Common Tactics:</h2>
-            <div className={styles.gridItemNumber}>Use of Force, Surveillence</div>
+            <h2 className={styles.gridItemTitle}>Common Tactic:</h2>
+            <div className={styles.gridItemNumber}>Use of Force</div>
           </div>
           <div className={styles.gridItem}>
             <h2 className={styles.gridItemTitle}>Trend Graph:</h2>

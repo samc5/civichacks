@@ -17,7 +17,7 @@ async function connectToDatabase() {
 export async function GET() {
   try {
     const db = await connectToDatabase();
-    const collection = db.collection('EVENTS');
+    const collection = db.collection('Events');
 
     const eventData = await collection.findOne({
       _id: new ObjectId('67ba4b28876839722173788b'),
