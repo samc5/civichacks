@@ -7,7 +7,7 @@ export async function POST(req) {
     const client = new MongoClient(MONGODB_URI);
     await client.connect();
     const db = client.db("ICE");
-    const collection = db.collection("ice_arrests");
+    const collection = db.collection("Events");
 
     const formData = await req.json();
     const result = await collection.insertOne(formData);
