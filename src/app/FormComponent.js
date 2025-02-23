@@ -6,8 +6,8 @@ export default function FormComponent() {
   const [formData, setFormData] = useState({
     Date: "",
     Location: "",
-    Latitude: 0,
-    Longitude: 0,
+    Latitude: 0.0,
+    Longitude: 0.0,
     ReasonProbation: "",
     HowLongArrested: "",
     Address: "",
@@ -46,13 +46,14 @@ export default function FormComponent() {
       if (data.results.length > 0) {
         // Address is valid, proceed with submission
         const { lat, lng } = data.results[0].geometry.location;
+        console.log("Extracted Latitude:", lat, "Longitude:", lng);
         const updatedFormData = {
           ...formData,
           Latitude: lat,
           Longitude: lng
         };
 
-        //alert(`Submitted: ${JSON.stringify(formData)}`);
+        alert(`Submitted: ${JSON.stringify(updatedFormData)}`);
 
 
         // Send data to MongoDB via API route
