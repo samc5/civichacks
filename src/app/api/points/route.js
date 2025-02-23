@@ -26,6 +26,7 @@ export async function GET() {
           status: arrest.ImmigrationStatus,
           how_ice_found: arrest.HowICE,
           follow_up: arrest.FollowUp,
+          unverified: arrest.unverified
         }))
     );
 
