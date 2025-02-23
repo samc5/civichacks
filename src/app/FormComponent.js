@@ -58,8 +58,7 @@ export default function FormComponent() {
       }
     } catch (error) {
       console.error("Error validating address:", error);
-      alert(error);
-      //alert("An error occurred while validating the address. Please try again later.");
+      alert("An error occurred while validating the address. Please try again later.");
     }
   };
 
