@@ -16,13 +16,6 @@ export async function POST(req) {
 
     const formData = await req.json();
     const result = await collection.insertOne(formData);
-
-    const uniqueField = formData.ice_arrests; // Example: Using Email as a unique identifier
-    const updateResult = await collection.updateOne(
-      { ice_arrests: uniqueField }, // Query to find the document
-      { $set: formData }, // Update operation
-      { upsert: true } // If no document matches, insert a new one
-    );
     
     client.close();
     return NextResponse.json({ message: "Form submitted successfully", result }, { status: 201 });
