@@ -83,7 +83,8 @@ const ArcGISMap = () => {
                         Location: point.location,
                         Address: point.address,
                         Date: point.date,
-                        Description: point.how_ice_found
+                        Description: point.how_ice_found, 
+                        Verified: unVerified
                     },
                     popupTemplate: {
                         title: "{Location}", 
