@@ -47,4 +47,5 @@
     text-align: center; /* Center the header text */
     margin-bottom: 1rem; /* Space below the header */
     margin-left: -10px; /* Move the header 10px to the left */
+    font-size: 2.5rem;
   }
