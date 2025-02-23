@@ -56,9 +56,9 @@ export default function FormComponent() {
 
 
         // Send data to MongoDB via API route
-       // const submitResponse = await axios.post("/api/submit", JSON.stringify(updatedFormData), {
-        //  headers: { "Content-Type": "application/json" }
-       // });
+        const submitResponse = await axios.post("/api/submit", JSON.stringify(updatedFormData), {
+          headers: { "Content-Type": "application/json" }
+        });
         
         alert("Form submitted successfully!");
       }
