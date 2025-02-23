@@ -43,8 +43,8 @@ export default function StatisticsPage() {
             <div className={styles.gridItemNumber}>{stats.pastWeekEvents}</div>
           </div>
           <div className={styles.gridItem}>
-            <h2 className={styles.gridItemTitle}>Hotspot:</h2>
-            <div className={styles.gridItemNumber}>Location A</div>
+            <h2 className={styles.gridItemTitle}>Recent Commmon Location:</h2>
+            <div className={styles.gridItemNumber}>CDS</div>
           </div>
           <div className={styles.gridItem}>
             <h2 className={styles.gridItemTitle}>Common Tactic:</h2>
@@ -52,7 +52,7 @@ export default function StatisticsPage() {
           </div>
           <div className={styles.gridItem}>
             <h2 className={styles.gridItemTitle}>Trend Graph:</h2>
-            <div className={styles.gridItemNumber}>Graph</div>
+            <div className={styles.gridItemNumber}></div>
           </div>
         </div>
       </section>
