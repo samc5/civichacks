@@ -15,7 +15,12 @@ export async function POST(req) {
     const collection = db.collection("Events");
 
     const formData = await req.json();
-    const result = await collection.insertOne(formData);
+   // const result = await collection.insertOne(formData);
+
+    const updateResult = await collection.updateOne(
+      { _id: '67ba4b28876839722173788b'}, // Update operation
+      { $addToSet: { ice_arrests: formData }} // If no document matches, insert a new one
+    );
     
     client.close();
     return NextResponse.json({ message: "Form submitted successfully", result }, { status: 201 });
