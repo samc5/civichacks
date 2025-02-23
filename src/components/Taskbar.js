@@ -1,31 +1,25 @@
 import Link from "next/link";
-import "../styles/globals.css";
+import styles from "./Taskbar.module.css";
 
 const Taskbar = () => {
   return (
-    <nav className="bg-gray-800 text-white p-4 shadow-md">
-      <div className="container mx-auto flex items-center justify-between">
+    <nav className={styles.nav}>
+      <div className="flex items-center justify-between">
         {/* ICE ICE Title */}
-        <h1 className="text-3xl font-bold text-white">ICE Tracker</h1>
+        <h1 className={styles.title}>ICE Tracker</h1>
 
         {/* Navigation Links */}
-        <div className="flex space-x-4">
-          <Link href="/">
-            <span className="block py-2 px-4 bg-gray-600 hover:bg-yellow-400 text-center rounded-md transition-colors">
-              Map
-            </span>
+        <div className="flex space-x-7">
+          <Link href="/" passHref>
+            <span className={`${styles.navLink} ${styles.map}`}>Map</span>
           </Link>
 
-          <Link href="/statistics">
-            <span className="block py-2 px-4 bg-gray-600 hover:bg-green-400 text-center rounded-md transition-colors">
-              Statistics
-            </span>
+          <Link href="/statistics" passHref>
+            <span className={`${styles.navLink} ${styles.statistics}`}>Statistics</span>
           </Link>
 
-          <Link href="/report">
-            <span className="block py-2 px-4 bg-gray-600 hover:bg-blue-400 text-center rounded-md transition-colors">
-              Submit a Report
-            </span>
+          <Link href="/report" passHref>
+            <span className={`${styles.navLink} ${styles.report}`}>Report</span>
           </Link>
         </div>
       </div>
