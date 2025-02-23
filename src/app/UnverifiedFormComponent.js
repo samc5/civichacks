@@ -12,7 +12,7 @@ export default function UnverifiedFormComponent() {
     HowICE: "",
     synthetic: false,  
     realLocation: true,
-    verified: false
+    unverified: true
   });
   const axios = require('axios');
 
