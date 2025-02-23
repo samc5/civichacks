@@ -4,16 +4,24 @@ import { useState } from "react";
 
 export default function FormComponent() {
   const [formData, setFormData] = useState({
-    name: "",
-    dateOfArrest: "",
-    locationOfArrest: "",
-    courthouseReason: "",
-    heldHours: "",
-    address: "",
-    immigrationStatus: "",
-    monitored: "",
-    latitude: "",
-    longitude: ""
+    Date: "",
+    Location: "",
+    Latitude: 0,
+    Longitude: 0,
+    ReasonProbation: "",
+    HowLongArrested: "",
+    Address: "",
+    ImmigrationStatus: "",
+    CircumstancesInfo: "",
+    IsISAP: "",
+    MonitoringType: "",
+    HowICE: "",
+    Name: "",
+    Email: "",
+    PhoneNumber: "",
+    FollowUp: "",
+    synthetic: false,  
+    realLocation: true
   });
   const axios = require('axios');
 
@@ -31,13 +39,13 @@ export default function FormComponent() {
     const apiUrl = "https://civichacks.vercel.app/api/geocode";
     try {
       const response = await axios.get(apiUrl, {
-        params: { address: formData.address },
+        params: { address: formData.Address },
       });
       const data = response.data;
 
       if (data.results.length > 0) {
         // Address is valid, proceed with submission
-        formData.latitude, formData.longitude = data.results[0].geometry.location;
+        formData.Latitude, formData.Longitude = data.results[0].geometry.location;
         alert(`Submitted: ${JSON.stringify(formData)}`);
       } else {
         // Address is invalid
@@ -55,23 +63,11 @@ export default function FormComponent() {
       className="flex flex-col gap-4 p-6 border rounded-lg shadow-md bg-white max-w-md mx-auto"
     >
       <label className="flex flex-col">
-        Name:
-        <input
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          className="p-2 border rounded"
-          required
-        />
-      </label>
-
-      <label className="flex flex-col">
         Date Of Arrest:
         <input
           type="date"
-          name="dateOfArrest"
-          value={formData.dateOfArrest}
+          name="Date"
+          value={formData.Date}
           onChange={handleChange}
           className="p-2 border rounded"
           required
@@ -82,8 +78,8 @@ export default function FormComponent() {
         Location Of Arrest:
         <input
           type="text"
-          name="locationOfArrest"
-          value={formData.locationOfArrest}
+          name="Location"
+          value={formData.Location}
           onChange={handleChange}
           className="p-2 border rounded"
           required
@@ -94,8 +90,8 @@ export default function FormComponent() {
         If arrested at a probation office or courthouse, what was the reason for being present?
         <input
           type="text"
-          name="courthouseReason"
-          value={formData.courthouseReason || ""}
+          name="ReasonProbation"
+          value={formData.ReasonProbation || ""}
           onChange={handleChange}
           className="p-2 border rounded"
         />
@@ -105,8 +101,8 @@ export default function FormComponent() {
         How long (in hours) were you/the person arrested held in police custody before ICE arrived?
         <input
           type="number"
-          name="heldHours"
-          value={formData.heldHours}
+          name="HowLongArrested"
+          value={formData.HowLongArrested}
           onChange={handleChange}
           className="p-2 border rounded"
           required
@@ -119,8 +115,8 @@ export default function FormComponent() {
         Address:
         <input
           type="text"
-          name="address"
-          value={formData.address}
+          name="Address"
+          value={formData.Address}
           onChange={handleChange}
           className="p-2 border rounded"
           required // You can change this to false if the field is optional
@@ -130,8 +126,8 @@ export default function FormComponent() {
       <label className="flex flex-col">
         Immigration Status at time of Arrest:
         <select
-          name= "immigrationStatus"
-          value={formData.immigrationStatus}
+          name= "ImmigrationStatus"
+          value={formData.ImmigrationStatus}
           onChange={handleChange}
           className="p-2 border rounded"
           required
@@ -147,8 +143,8 @@ export default function FormComponent() {
       <label className="flex flex-col">
         Was person arrested monitored/under surveillence by ICE?
         <select
-          name= "monitored"
-          value={formData.monitored}
+          name= "MonitoringType"
+          value={formData.MonitoringType}
           onChange={handleChange}
           className="p-2 border rounded"
           required
@@ -159,12 +155,69 @@ export default function FormComponent() {
           <option value="unsure">Unsure</option>
         </select>
       </label>
+    
+      <label className="flex flex-col">
+      <span className="font-bold">Informant Information</span>
+        Name:
+        <input
+          type="text"
+          name="Name"
+          value={formData.Name}
+          onChange={handleChange}
+          className="p-2 border rounded"
+          required
+        />
+      </label>
+
+      <label className="flex flex-col">
+        Email:
+        <input
+          type="email"
+          name="Email"
+          value={formData.Email}
+          onChange={handleChange}
+          className="p-2 border rounded"
+          required
+        />
+      </label>
+
+
+      
+
+      <label className="flex flex-col">
+      <span className="font-bold">Informant Information</span>
+        Phone Number:
+        <input
+          type= "number"
+          name="PhoneNumber"
+          value={formData.PhoneNumber}
+          onChange={handleChange}
+          className="p-2 border rounded"
+          required
+        />
+      </label>
+
+      <label className="flex flex-col">
+        May we follow up with you?
+        <select
+          name= "FollowUp"
+          value={formData.FollowUp}
+          onChange={handleChange}
+          className="p-2 border rounded"
+          required
+        >
+          <option value="">Select a reason</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </label>
 
       <button
         type="submit"
         className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition">
         Submit
       </button>
+
     </form>
   );
 }
