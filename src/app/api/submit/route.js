@@ -3,12 +3,13 @@ import { MongoClient } from "mongodb";
 
 export async function POST(req) {
   try {
+    console.log("MONGODB_URI:", process.env.MONGODB_URI ? "Loaded" : "Missing");
     const { MONGODB_URI } = process.env;
     const client = new MongoClient(MONGODB_URI);
     await client.connect();
 
     await client.db("admin").command({ping: 1});
-    console.log("hji");
+    
 
     const db = client.db("ICE");
     const collection = db.collection("Events");
