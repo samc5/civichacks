@@ -1,35 +1,54 @@
-import Link from 'next/link';
+ 'use client'; // Ensure this runs on the client side
+import { useEffect, useState } from 'react';
 import Taskbar from '@/components/Taskbar';
-import Image from 'next/image'; // Import the Image component
-import styles from './StatisticsPage.module.css'; // Import the CSS module
+import styles from './StatisticsPage.module.css';
 
 export default function StatisticsPage() {
+
+  const [stats, setStats] = useState({
+    totalEvents: 0,
+    past24hrsEvents: 0,
+    pastWeekEvents: 0,
+  });
+
+  useEffect(() => {
+    async function fetchStats() {
+      try {
+        const response = await fetch('../api/stats'); // Call your new API route
+        const data = await response.json();
+        setStats(data);
+      } catch (error) {
+        console.error('Error fetching statistics:', error);
+      }
+    }
+    fetchStats();
+  }, []);
+
   return (
     <div>
       <Taskbar />
-
       <section className={styles.dashboard}>
         <h1 className={styles.title}>Statistics</h1>
         <div className={styles.grid}>
           <div className={styles.gridItem}>
             <h2 className={styles.gridItemTitle}>Total ICE Events:</h2>
-            <div className={styles.gridItemNumber}>123</div>
+            <div className={styles.gridItemNumber}>{stats.totalEvents}</div>
           </div>
           <div className={styles.gridItem}>
             <h2 className={styles.gridItemTitle}>Past 24 hrs:</h2>
-            <div className={styles.gridItemNumber}>45</div>
+            <div className={styles.gridItemNumber}>{stats.past24hrsEvents}</div>
           </div>
           <div className={styles.gridItem}>
             <h2 className={styles.gridItemTitle}>Past week:</h2>
-            <div className={styles.gridItemNumber}>300</div>
+            <div className={styles.gridItemNumber}>{stats.pastWeekEvents}</div>
           </div>
           <div className={styles.gridItem}>
             <h2 className={styles.gridItemTitle}>Hotspot:</h2>
             <div className={styles.gridItemNumber}>Location A</div>
           </div>
           <div className={styles.gridItem}>
-            <h2 className={styles.gridItemTitle}>Common reason:</h2>
-            <div className={styles.gridItemNumber}>Reason X</div>
+            <h2 className={styles.gridItemTitle}>Common Tactics:</h2>
+            <div className={styles.gridItemNumber}>Use of Force, Surveillence</div>
           </div>
           <div className={styles.gridItem}>
             <h2 className={styles.gridItemTitle}>Trend Graph:</h2>
