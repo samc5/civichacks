@@ -46,8 +46,13 @@ export default function FormComponent() {
       if (data.results.length > 0) {
         // Address is valid, proceed with submission
         formData.Latitude, formData.Longitude = data.results[0].geometry.location;
-        alert(`Submitted: ${JSON.stringify(formData)}`);
-      } else {
+        //alert(`Submitted: ${JSON.stringify(formData)}`);
+        
+        // Send data to MongoDB via API route
+        const submitResponse = await axios.post("/api/submit", formData);
+        alert("Form submitted successfully!");
+      }
+      else {
         // Address is invalid
         alert("The address entered is not valid. Please check and try again.");
       }
