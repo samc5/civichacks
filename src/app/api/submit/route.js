@@ -18,12 +18,12 @@ export async function POST(req) {
    // const result = await collection.insertOne(formData);
 
     const updateResult = await collection.updateOne(
-      { _id: '67ba4b28876839722173788b'}, // Update operation
+      { _id: new ObjectId('67ba4b28876839722173788b')}, // Update operation
       { $addToSet: { ice_arrests: formData }} // If no document matches, insert a new one
     );
     
     client.close();
-    return NextResponse.json({ message: "Form submitted successfully", result }, { status: 201 });
+    return NextResponse.json({ message: "Form submitted successfully", updateResult }, { status: 201 });
   } catch (error) {
     console.error("Error saving form data:", error);
     return NextResponse.json({ error: "Failed to submit form" }, { status: 500 });
