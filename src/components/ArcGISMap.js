@@ -50,7 +50,7 @@ const ArcGISMap = () => {
             view = new MapView({
                 container: mapRef.current,
                 map: map,
-                center: [-71.5589, 42.3601], // Center of Boston
+                center: [-71.589, 42.1601], // Center of Boston
                 zoom: 8,
             });
 
@@ -67,8 +67,14 @@ const ArcGISMap = () => {
                     },
                     symbol: {
                         type: "simple-marker",
-                        color: "blue",
+                        style: "triangle",
+                        color: "yellow",
                         size: "10px",
+                        outline: {
+                            color: "black",
+                            width: 0.8 // Smaller border width
+                        },
+                        size: 10
                     },
                     attributes: {
                         Name: point.name,
@@ -99,7 +105,7 @@ const ArcGISMap = () => {
         return <div>Loading map...</div>; // Show loading message while points are being fetched
     }
 
-    return <div ref={mapRef} style={{ width: "100%", height: "500px" }} />;
+    return <div ref={mapRef} style={{ width: "100%", height: "670px" }} />;
 };
 
 export default ArcGISMap;

@@ -1,0 +1,63 @@
+.nav {
+    background: linear-gradient(
+      to bottom,
+      #2b2b2b 0%,
+      #2b2b2b 70%,
+      #242424 80%,
+      #000000 100%
+    ); /* Gradient that darkens towards the bottom */
+    color: #FFFFFF;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    color: #FFFFFF;
+    margin-right: auto;
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  
+  .navLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1rem;
+    text-align: center;
+    border-radius: 1.75rem;
+    font-size: 1.5rem;
+    width: 12rem;
+    height: 4rem;
+    color: #000000;
+    font-weight: bold;
+    background-color: #FFD700;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .navLink:hover {
+    background-color: #d3391e; /* Tomato red on hover */
+    color: #fff; /* White text on hover */
+  }
+  
+  
+  .map {
+    background-color: #FFD700; /* Yellow */
+  }
+  
+  .statistics {
+    background-color: #FFD700; /* Yellow */
+  }
+
+  .statistics::before {
+    background-color: #4ba505; /* Yellow */
+  }
+  
+  .report {
+    background-color: #FFD700; /* Yellow */
+  }
+  
+  .report::before {
+    background-color: #FF0000; /* Red for report button */
+  }
+
+  
