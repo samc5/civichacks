@@ -45,11 +45,19 @@ export default function FormComponent() {
 
       if (data.results.length > 0) {
         // Address is valid, proceed with submission
-        formData.Latitude, formData.Longitude = data.results[0].geometry.location;
+        const { lat, lng } = data.results[0].geometry.location;
+        setFormData((prev) => ({
+          ...prev,
+          Latitude: lat,
+          Longitude: lng
+        }));
+
         alert(`Submitted: ${JSON.stringify(formData)}`);
 
         // Send data to MongoDB via API route
-        const submitResponse = await axios.post("/api/submit", formData);
+        const submitResponse = await axios.post("/api/submit", JSON.stringify(formData), {
+          headers: { "Content-Type": "application/json" }
+        });
         alert("Form submitted successfully!");
       }
       else {
