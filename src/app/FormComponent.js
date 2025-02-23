@@ -51,11 +51,7 @@ export default function FormComponent() {
           Latitude: lat,
           Longitude: lng
         };
-        alert("Extracted Latitude:", lat, "Longitude:", lng)
-        alert(`Submitted: ${JSON.stringify(updatedFormData)}`);
-
-
-        // Send data to MongoDB via API route
+;        // Send data to MongoDB via API route
         const submitResponse = await axios.post("/api/submit", JSON.stringify(updatedFormData), {
           headers: { "Content-Type": "application/json" }
         });
