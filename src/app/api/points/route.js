@@ -6,7 +6,7 @@ export async function GET() {
   try {
     const { db } = await connectToDatabase();
 
-    const documents = await db.collection("Events").find({}).toArray();
+    const documents = await db.collection("Events").find({}).limit(750).toArray();
 
     if (!documents || documents.length === 0) {
       console.warn("No documents found in MongoDB collection.");

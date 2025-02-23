@@ -6,7 +6,7 @@ const Taskbar = () => {
     <nav className="bg-gray-800 text-white p-4 shadow-md">
       <div className="container mx-auto flex items-center justify-between">
         {/* ICE ICE Title */}
-        <h1 className="text-3xl font-bold text-white">ICE ICE</h1>
+        <h1 className="text-3xl font-bold text-white">ICE Tracker</h1>
 
         {/* Navigation Links */}
         <div className="flex space-x-4">

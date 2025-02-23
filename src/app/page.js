@@ -39,7 +39,7 @@ export default function Home() {
         <div className="map-container flex-1">
           <ArcGISMap />
         </div>
-        <aside className="news-section w-1/3 bg-gray-200 p-4 flex flex-col h-full">
+        <aside className="news-section w-1/4 bg-gray-200 p-4 flex flex-col h-full">
           <h2 className="news-header text-3xl font-bold text-center mb-4">Events</h2>
           <ul className="news-list space-y-4 flex-grow">
             {newsStories.map((story, index) => (

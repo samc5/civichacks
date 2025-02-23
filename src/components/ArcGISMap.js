@@ -50,8 +50,8 @@ const ArcGISMap = () => {
             view = new MapView({
                 container: mapRef.current,
                 map: map,
-                center: [-98.5795, 39.8283], // Center of the USA
-                zoom: 4,
+                center: [-71.5589, 42.3601], // Center of Boston
+                zoom: 8,
             });
 
             const graphicsLayer = new GraphicsLayer();
