@@ -46,11 +46,11 @@ export default function FormComponent() {
       if (data.results.length > 0) {
         // Address is valid, proceed with submission
         formData.Latitude, formData.Longitude = data.results[0].geometry.location;
-        //alert(`Submitted: ${JSON.stringify(formData)}`);
-        
+        alert(`Submitted: ${JSON.stringify(formData)}`);
+
         // Send data to MongoDB via API route
-        const submitResponse = await axios.post("/api/submit", formData);
-        alert("Form submitted successfully!");
+        //const submitResponse = await axios.post("/api/submit", formData);
+        //alert("Form submitted successfully!");
       }
       else {
         // Address is invalid
@@ -58,7 +58,8 @@ export default function FormComponent() {
       }
     } catch (error) {
       console.error("Error validating address:", error);
-      alert("An error occurred while validating the address. Please try again later.");
+      alert(error);
+      //alert("An error occurred while validating the address. Please try again later.");
     }
   };
 
