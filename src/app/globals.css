@@ -17,6 +17,8 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: 'Book Antiqua', serif;
+  font-family: 'Montserrat', sans-serif; /* Changed to Montserrat */
+  color: #333; /* Dark text color for better readability */
+  line-height: 1.6; /* Improve line spacing */
 }
 

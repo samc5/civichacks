@@ -1,0 +1,41 @@
+.dashboard {
+    padding: 2rem;
+  }
+  
+  .dashboard h1 {
+    font-size: 2.5rem; /* Larger font size for the title */
+    margin-bottom: 1.5rem; /* Space below the title */
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .gridItem {
+    background-color: #e0e0e0; /* Slightly lighter than the background color */
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 250px; /* Increase the height of the boxes */
+    position: relative;
+  }
+  
+  .gridItemTitle {
+    font-size: 1.5rem; /* Font size for the grid item titles */
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    margin: 0;
+  }
+  
+  .gridItemNumber {
+    font-size: 4.5rem; /* Larger font size for the numbers */
+    color: #333;
+  }

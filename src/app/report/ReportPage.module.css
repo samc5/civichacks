@@ -1,0 +1,17 @@
+.formSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: #f9f9f9; /* Light background color */
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  .title {
+    font-size: 2.5rem; /* Larger font size for the title */
+    font-weight: bold;
+    margin-bottom: 1rem; /* Space below the title */
+    text-align: center;
+    color: #333; /* Darker text color */
+  }
