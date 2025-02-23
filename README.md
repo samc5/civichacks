@@ -1,8 +1,8 @@
 ## CivicHacks 2025 Project
-[@samc5] (https://www.github.com/samc5)
-[@clow427] (https://www.github.com/clow427)
-[@GregoryFan] (https://www.github.com/GregoryFan)
-[@akeng746] (https://www.github.com/akeng746)
+[@samc5] (https://www.github.com/samc5)  
+[@clow427] (https://www.github.com/clow427)  
+[@GregoryFan] (https://www.github.com/GregoryFan)  
+[@akeng746] (https://www.github.com/akeng746)  
 ## Inspiration
 With the current Trump administration, the need for transparency over ICE's activities is greater than ever. Immigrants live in fear of raids and advocates often lack enough information to understand trends or identify illegal tactics. The current system advocates use to track ICE activities requires manual entry of information. With the speed ICE can move at, immigrants and advocates need a faster way to communicate information with each other and the public. Our project addresses this by creating a live map of Massachusetts that can be easily updated with new arrests such that this information is more readily available to all.
 
