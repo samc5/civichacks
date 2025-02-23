@@ -9,9 +9,35 @@
   }
   
   .title {
-    font-size: 2.5rem; /* Larger font size for the title */
+    font-size: 3rem; /* Larger font size for the title */
     font-weight: bold;
-    margin-bottom: 1rem; /* Space below the title */
+    margin-bottom: 2rem; /* Space below the title */
     text-align: center;
     color: #333; /* Darker text color */
+  }
+  
+  .switchContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem; /* Space below the switch buttons */
+  }
+  
+  .switchButton {
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .switchButton.active {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .switchButton:hover {
+    background-color: #007bff;
+    color: white;
   }
