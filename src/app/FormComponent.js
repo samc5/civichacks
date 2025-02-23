@@ -52,8 +52,6 @@ export default function FormComponent() {
           Longitude: lng
         }));
 
-        alert(`Submitted: ${JSON.stringify(formData)}`);
-
         // Send data to MongoDB via API route
         const submitResponse = await axios.post("/api/submit", JSON.stringify(formData), {
           headers: { "Content-Type": "application/json" }
