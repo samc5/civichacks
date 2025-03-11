@@ -14,6 +14,13 @@ async function connectToDatabase() {
   return db;
 }
 
+function countEventsSince(date, eventData){
+  return eventData.ice_arrests.filter(event => {
+    let myDate = event.Date.split("-");
+    var newDate = new Date( Number(myDate[0]), Number(myDate[1]) - 1, Number(myDate[2])); 
+    return newDate >= date}).length;
+}
+
 export async function GET() {
   try {
     const db = await connectToDatabase();
@@ -32,8 +39,12 @@ export async function GET() {
     const pastWeek = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
 
     const totalEvents = eventData.ice_arrests.length;
-    const past24hrsEvents = eventData.ice_arrests.filter(event => new Date(event.timestamp) >= past24hrs).length;
-    const pastWeekEvents = eventData.ice_arrests.filter(event => new Date(event.timestamp) >= pastWeek).length;
+    const past24hrsEvents = countEventsSince(past24hrs, eventData);
+    const pastWeekEvents = countEventsSince(pastWeek, eventData);
+    // const pastWeekEvents = eventData.ice_arrests.filter(event => {new Date(event.timestamp) >= pastWeek}).length;
+    // console.log(totalEvents);
+    // console.log(past24hrsEvents);
+    // console.log(pastWeek);
 
     return NextResponse.json({ totalEvents, past24hrsEvents, pastWeekEvents });
   } catch (error) {
